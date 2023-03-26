@@ -21,7 +21,7 @@ public class EmailSender implements Sender {
     public String send(Message message) {
         String resp;
         EmailMessage emailMessage = ((EmailMessage)message);
-     /*   try {
+       try {
             Session session = Session.getInstance(fillProp());
             log.info("Session for sending email has been created");
             InternetAddress from = new InternetAddress(EMAIL_FROM);
@@ -31,13 +31,13 @@ public class EmailSender implements Sender {
             mime.setFrom(from);
             mime.setSubject("example");
             mime.setText(message.getText());
-            Transport.send(mime);*/
+            Transport.send(mime);
             log.info("OK. Email has been sent");
             resp = "Email message with text \""+message.getText()+"\" has been sent to "+(emailMessage.getEmailAddress());
-       /* } catch (MessagingException e) {
+        } catch (MessagingException e) {
             log.error("Some problem");
             resp = "Email wasn't sent."+e.getMessage();
-        }*/
+        }
     return resp;
     }
 
